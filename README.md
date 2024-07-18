@@ -41,18 +41,18 @@ Check CUDA Version:
 
 Type the following command and press Enter:
 
-bash
+```bash
 Copy code
 nvcc --version
+```
 This will output the CUDA version information. Look for a line similar to:
 
 vbnet
-Copy code
 nvcc: NVIDIA (R) Cuda compiler driver
 Copyright (c) 2005-2022 NVIDIA Corporation
 Built on Sun_Sep_22_19:32:54_PDT_2022
 Cuda compilation tools, release 11.8, V11.8.89
-The release version number indicates the installed CUDA version.
+
 ## Installation
 
 ### Clone Repository
