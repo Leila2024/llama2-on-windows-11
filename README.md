@@ -52,7 +52,6 @@ Check CUDA Version:
 Type the following command and press Enter:
 
 ```bash
-Copy code
 nvcc --version
 ```
 This will output the CUDA version information. Look for a line similar to:
