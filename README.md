@@ -33,7 +33,26 @@ Before starting, ensure you have the following:
 - Administrative privileges to install software.
 - Git installed on your machine. [Download Git](https://git-scm.com/downloads)
 - Anaconda installed on your machine. [Download Anaconda](https://www.anaconda.com/products/distribution)
+Method 1: Using nvcc Command
+Open Command Prompt:
 
+Press Win + R, type cmd, and press Enter.
+Check CUDA Version:
+
+Type the following command and press Enter:
+
+bash
+Copy code
+nvcc --version
+This will output the CUDA version information. Look for a line similar to:
+
+vbnet
+Copy code
+nvcc: NVIDIA (R) Cuda compiler driver
+Copyright (c) 2005-2022 NVIDIA Corporation
+Built on Sun_Sep_22_19:32:54_PDT_2022
+Cuda compilation tools, release 11.8, V11.8.89
+The release version number indicates the installed CUDA version.
 ## Installation
 
 ### Clone Repository
@@ -128,6 +147,9 @@ Copy the local URL from your terminal and paste it into your web browser. You sh
 ### Choose a Model
 
 I use the 70B Llama models which require a minimum of 32GB GPU RAM, but you can use the 13B or 7B models if your GPU can’t handle that.
+7B Llama = TheBloke/Llama-2-7B-chat-GPTQ
+13B Llama = TheBloke/Llama-2-13B-chat-GPTQ
+70B Llama = TheBloke/Llama-2-70B-chat-GPTQ
 
 ### Download the Model
 
