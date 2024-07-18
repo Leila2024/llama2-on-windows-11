@@ -36,7 +36,17 @@ Before starting, ensure you have the following:
 Method 1: Using nvcc Command
 Open Command Prompt:
 
-Press Win + R, type cmd, and press Enter.
+Check Python Version:
+
+Type the following command and press Enter:
+```bash
+python --version
+```
+This will output the Python version information. For example:
+```bash
+Python 3.8.10
+```
+
 Check CUDA Version:
 
 Type the following command and press Enter:
