@@ -91,7 +91,14 @@ Activate the environment.
 conda activate llama2
 ```
 
-![Anaconda Navigator Screenshot](docs/Screenshot_2024-07-18_084821.png)
+### Install PyTorch
+
+Go to [PyTorch Get Started Locally](https://pytorch.org/get-started/locally/) and create your PC PyTorch installation command. For a typical Windows setup, you can use the following command:
+
+```bash
+conda install pytorch torchvision torchaudio pytorch-cuda=11.8 -c pytorch -c nvidia
+```
+
 
 ### Install Dependencies
 
@@ -99,14 +106,6 @@ Install the required Python packages.
 
 ```bash
 pip install -r requirements.txt
-```
-
-### Install PyTorch
-
-Go to [PyTorch Get Started Locally](https://pytorch.org/get-started/locally/) and create your PC PyTorch installation command. For a typical Windows setup, you can use the following command:
-
-```bash
-conda install pytorch torchvision torchaudio pytorch-cuda=11.8 -c pytorch -c nvidia
 ```
 
 ### Clone Text Generation Web UI Repository
