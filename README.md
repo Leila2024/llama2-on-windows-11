@@ -99,15 +99,6 @@ Go to [PyTorch Get Started Locally](https://pytorch.org/get-started/locally/) an
 conda install pytorch torchvision torchaudio pytorch-cuda=11.8 -c pytorch -c nvidia
 ```
 
-
-### Install Dependencies
-
-Install the required Python packages.
-
-```bash
-pip install -r requirements.txt
-```
-
 ### Clone Text Generation Web UI Repository
 
 After installing PyTorch, clone the Text Generation Web UI repository.
