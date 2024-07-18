@@ -53,6 +53,13 @@ Activate the environment.
 ```bash
 conda activate llama2
 ```
+### Install PyTorch
+
+Go to [PyTorch Get Started Locally](https://pytorch.org/get-started/locally/) and create your PC PyTorch installation command. For a typical Windows setup, you can use the following command:
+
+```bash
+conda install pytorch torchvision torchaudio pytorch-cuda=11.8 -c pytorch -c nvidia
+```
 
 ### Install Dependencies
 
@@ -60,14 +67,6 @@ Install the required Python packages.
 
 ```bash
 pip install -r requirements.txt
-```
-
-### Install PyTorch
-
-Go to [PyTorch Get Started Locally](https://pytorch.org/get-started/locally/) and create your PC PyTorch installation command. For a typical Windows setup, you can use the following command:
-
-```bash
-conda install pytorch torchvision torchaudio pytorch-cuda=11.8 -c pytorch -c nvidia
 ```
 
 ## Downloading LLaMA2 Model
