@@ -54,8 +54,6 @@ Activate the environment.
 conda activate llama2
 ```
 
-![Anaconda Navigator Screenshot](docs/Screenshot_2024-07-18_084821.png)
-
 ### Install Dependencies
 
 Install the required Python packages.
