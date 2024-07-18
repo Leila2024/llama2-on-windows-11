@@ -1,6 +1,6 @@
 # llama2-on-windows-11
 
-This repository provides a comprehensive guide and necessary scripts to set up and run LLaMA2 (Large Language Model Architecture) on a Windows 11 machine using Anaconda. You can follow the instructions below to get LLaMA2 up and running smoothly.
+This repository provides a comprehensive guide and necessary scripts to set up and run LLaMA2 (Large Language Model Architecture) on a Windows 11 machine using Anaconda. Follow the instructions below to get LLaMA2 up and running seamlessly.
 
 ## Table of Contents
 
@@ -10,8 +10,17 @@ This repository provides a comprehensive guide and necessary scripts to set up a
   - [Install Anaconda](#install-anaconda)
   - [Set Up Anaconda Environment](#set-up-anaconda-environment)
   - [Install Dependencies](#install-dependencies)
+  - [Install PyTorch](#install-pytorch)
+  - [Clone Text Generation Web UI Repository](#clone-text-generation-web-ui-repository)
+  - [Change Directory](#change-directory)
+  - [Install Python Modules](#install-python-modules)
+  - [Start the Server](#start-the-server)
+- [Access the Web UI](#access-the-web-ui)
 - [Downloading LLaMA2 Model](#downloading-llama2-model)
-- [Running LLaMA2](#running-llama2)
+- [Load the Model](#load-the-model)
+- [Configure the Session](#configure-the-session)
+- [Configure Parameters](#configure-parameters)
+- [Test the Model](#test-the-model)
 - [Troubleshooting](#troubleshooting)
 - [Contributing](#contributing)
 - [License](#license)
@@ -29,16 +38,16 @@ Before starting, ensure you have the following:
 
 ### Clone Repository
 
-First, clone the repository to your local machine using Git.
+First, clone this repository to your local machine using Git.
 
 ```bash
-git clone https://github.com/Leila2024/llama2-on-windows-11.git
-cd llama2-on-windows-11
+git clone https://github.com/Leila2024/lama2.git
+cd lama2
 ```
 
 ### Install Anaconda
 
-Please make sure Anaconda is installed on your machine. You can download it from the official [Anaconda website](https://www.anaconda.com/products/distribution).
+Ensure Anaconda is installed on your machine. You can download it from the official [Anaconda website](https://www.anaconda.com/products/distribution).
 
 ### Set Up Anaconda Environment
 
@@ -53,13 +62,8 @@ Activate the environment.
 ```bash
 conda activate llama2
 ```
-### Install PyTorch
 
-Go to [PyTorch Get Started Locally](https://pytorch.org/get-started/locally/) and create your PC PyTorch installation command. For a typical Windows setup, you can use the following command:
-
-```bash
-conda install pytorch torchvision torchaudio pytorch-cuda=11.8 -c pytorch -c nvidia
-```
+![Anaconda Navigator Screenshot](docs/Screenshot_2024-07-18_084821.png)
 
 ### Install Dependencies
 
@@ -69,22 +73,85 @@ Install the required Python packages.
 pip install -r requirements.txt
 ```
 
-## Downloading LLaMA2 Model
+### Install PyTorch
 
-You need to download the LLaMA2 model weights separately. Follow these steps:
-
-1. Visit the official [LLaMA2 Model Page](https://lachieslifestyle.com/2023/07/29/how-to-install-llama-2/) and download the model weights.
-2. Place the downloaded weights in the `models/llama2` directory within this repository.
-
-## Running LLaMA2
-
-After setting up the environment and downloading the model, you can run LLaMA2 using the provided scripts.
+Go to [PyTorch Get Started Locally](https://pytorch.org/get-started/locally/) and create your PC PyTorch installation command. For a typical Windows setup, you can use the following command:
 
 ```bash
-python run_llama2.py
+conda install pytorch torchvision torchaudio pytorch-cuda=11.8 -c pytorch -c nvidia
 ```
 
-This script will initialize the model and run it, allowing you to interact with it.
+### Clone Text Generation Web UI Repository
+
+After installing PyTorch, clone the Text Generation Web UI repository.
+
+```bash
+git clone https://github.com/oobabooga/text-generation-webui.git
+```
+
+This command clones the repository into a new folder named `text-generation-webui`.
+
+### Change Directory
+
+Next, change the directory to the newly cloned folder.
+
+```bash
+cd text-generation-webui
+```
+
+### Install Python Modules
+
+Inside the `text-generation-webui` folder, install all the required Python modules.
+
+```bash
+pip install -r requirements.txt
+```
+
+This command installs all the Python modules listed in the `requirements.txt` file. This process may take a few minutes.
+
+### Start the Server
+
+Now that all the necessary modules are installed, you can start the server with the following command:
+
+```bash
+python server.py
+```
+
+Once the server is running, you will see a local URL in your terminal.
+
+## Access the Web UI
+
+Copy the local URL from your terminal and paste it into your web browser. You should now see the Text Generation Web UI.
+
+## Downloading LLaMA2 Model
+
+### Choose a Model
+
+I use the 70B Llama models which require a minimum of 32GB GPU RAM, but you can use the 13B or 7B models if your GPU can’t handle that.
+
+### Download the Model
+
+1. Go to the LLaMA 2 70b chat model on Hugging Face and copy the model URL. For example, "TheBloke/Llama-2-70B-chat-GPTQ".
+2. Switch back to the Text Generation Web UI, go to the Model tab, and paste the partial URL into the “Download custom model” field.
+3. Click “Download” to start the download. This process will take a significant amount of time due to the large file size of the model.
+
+## Load the Model
+
+Once the model is downloaded, click the blue “Reload” button at the top of the Model tab. Find the downloaded model in the list and click “Load”. Make sure to use the Transformers model loader for this process. This process may also take some time.
+
+## Configure the Session
+
+After loading the model, switch to the Session tab and select “Chat” from the Mode dropdown menu. Click “Apply and Restart” to apply the changes.
+
+## Configure Parameters
+
+Switch to the Parameters tab and max out the “New Tokens” field. Set the “Temperature” field to 0. You can adjust these settings later based on your needs.
+
+## Test the Model
+
+Finally, switch back to the Text Generation tab and test the model by typing something into the input field and clicking “Generate”.
+
+And there you have it! You have successfully installed LLaMA 2 locally. Enjoy exploring the capabilities of this powerful AI model.
 
 ## Troubleshooting
 
