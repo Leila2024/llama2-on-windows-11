@@ -1,6 +1,6 @@
 # llama2-on-windows-11
 
-This repository provides a comprehensive guide and necessary scripts to set up and run LLaMA2 (Large Language Model Architecture) on a Windows 11 machine using Anaconda. Follow the instructions below to get LLaMA2 up and running seamlessly.
+This repository provides a comprehensive guide and necessary scripts to set up and run LLaMA2 (Large Language Model Architecture) on a Windows 11 machine using Anaconda. You can follow the instructions below to get LLaMA2 up and running smoothly.
 
 ## Table of Contents
 
@@ -33,6 +33,7 @@ Before starting, ensure you have the following:
 - Administrative privileges to install software.
 - Git installed on your machine. [Download Git](https://git-scm.com/downloads)
 - Anaconda installed on your machine. [Download Anaconda](https://www.anaconda.com/products/distribution)
+
 Method 1: Using nvcc Command
 Open Command Prompt:
 
@@ -55,12 +56,12 @@ Type the following command and press Enter:
 nvcc --version
 ```
 This will output the CUDA version information. Look for a line similar to:
-
-vbnet
+```text
 nvcc: NVIDIA (R) Cuda compiler driver
 Copyright (c) 2005-2022 NVIDIA Corporation
 Built on Sun_Sep_22_19:32:54_PDT_2022
 Cuda compilation tools, release 11.8, V11.8.89
+```
 
 ## Installation
 
@@ -189,7 +190,3 @@ We welcome contributions! Please read our [CONTRIBUTING](CONTRIBUTING.md) guidel
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
----
-
-Feel free to reach out if you have any questions or issues. Happy modeling!
