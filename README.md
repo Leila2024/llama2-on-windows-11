@@ -1,6 +1,6 @@
-# llama2-on-windows-11
+# LLaMA2 on Windows 11
 
-This repository provides a comprehensive guide and necessary scripts to set up and run LLaMA2 (Large Language Model Architecture) on a Windows 11 machine using Anaconda. You can follow the instructions below to get LLaMA2 up and running smoothly.
+This repository provides a comprehensive guide and necessary scripts to set up and run LLaMA2 (Large Language Model Architecture) on a Windows 11 machine using Anaconda. Please follow the instructions below to get LLaMA2 up and running smoothly.
 
 ## Table of Contents
 
@@ -34,16 +34,22 @@ Before starting, ensure you have the following:
 - Git installed on your machine. [Download Git](https://git-scm.com/downloads)
 - Anaconda installed on your machine. [Download Anaconda](https://www.anaconda.com/products/distribution)
 
+### Check Python and CUDA Versions
+
 Method 1: Using nvcc Command
+
 Open Command Prompt:
 
 Check Python Version:
 
 Type the following command and press Enter:
+
 ```bash
 python --version
 ```
+
 This will output the Python version information. For example:
+
 ```bash
 Python 3.8.10
 ```
@@ -55,7 +61,9 @@ Type the following command and press Enter:
 ```bash
 nvcc --version
 ```
+
 This will output the CUDA version information. Look for a line similar to:
+
 ```text
 nvcc: NVIDIA (R) Cuda compiler driver
 Copyright (c) 2005-2022 NVIDIA Corporation
@@ -71,7 +79,7 @@ First, clone this repository to your local machine using Git.
 
 ```bash
 git clone https://github.com/Leila2024/llama2-on-windows-11.git
-cd lama2
+cd llama2
 ```
 
 ### Install Anaconda
@@ -146,14 +154,13 @@ Copy the local URL from your terminal and paste it into your web browser. You sh
 
 ### Choose a Model
 
-I use the 70B Llama models which require a minimum of 32GB GPU RAM, but you can use the 13B or 7B models if your GPU can’t handle that.
-7B Llama = TheBloke/Llama-2-7B-chat-GPTQ
-13B Llama = TheBloke/Llama-2-13B-chat-GPTQ
-70B Llama = TheBloke/Llama-2-70B-chat-GPTQ
+- 7B Llama = TheBloke/Llama-2-7B-chat-GPTQ
+- 13B Llama = TheBloke/Llama-2-13B-chat-GPTQ
+- 70B Llama = TheBloke/Llama-2-70B-chat-GPTQ (requires a minimum of 32GB GPU RAM)
 
 ### Download the Model
 
-1. Go to the LLaMA 2 70b chat model on Hugging Face and copy the model URL. For example, "TheBloke/Llama-2-70B-chat-GPTQ".
+1. Go to the LLaMA 2 70B chat model on Hugging Face and copy the model URL. For example, "TheBloke/Llama-2-70B-chat-GPTQ".
 2. Switch back to the Text Generation Web UI, go to the Model tab, and paste the partial URL into the “Download custom model” field.
 3. Click “Download” to start the download. This process will take a significant amount of time due to the large file size of the model.
 
@@ -183,34 +190,45 @@ If you encounter any issues, refer to the following common problems and solution
 - **Missing Dependencies:** Run `pip install -r requirements.txt` again to ensure all dependencies are installed.
 - **Model Not Found:** Verify that the model weights are placed in the correct directory.
 - **The error indicates that you need Microsoft Visual C++ 14.0 or greater to build the auto_gptq package. Here are the steps to resolve this issue:
-- Step 1: Install Microsoft Visual C++ Build Tools
-Go to the Microsoft Visual C++ Build Tools download page.
-Download and install the build tools.
-During the installation, ensure you select the "Desktop development with C++" workload.
-Step 2: Verify Installation
-After installing the build tools, you can verify the installation by running the following command in a new command prompt (not the one running your virtual environment):
+  
+  Step 1: Install Microsoft Visual C++ Build Tools
+  
+  Go to the Microsoft Visual C++ Build Tools download page.
+  
+  Download and install the build tools.
+  
+  During the installation, ensure you select the "Desktop development with C++" workload.
+  
+  Step 2: Verify Installation
+  
+  After installing the build tools, you can verify the installation by running the following command in a new command prompt (not the one running your virtual environment):
+  
+  ```bash
+  cl
+  ```
+  
+  You should see the version information for the C++ compiler if it's installed correctly.
+  
+  Step 3: Reattempt Package Installation
+  
+  After installing the build tools, return to your virtual environment and attempt to install the package again:
+  
+  ```bash
+  pip install git+https://github.com/PanQiWei/AutoGPTQ.git@main
+  ```
+  
+  or
+  
+  ```bash
+  pip install auto-gptq==0.7.1
+  ```
 
-```bash
-cl
-```
-You should see the version information for the C++ compiler if it's installed correctly.
+- **Modify requirements.txt:**
+  
+  Update your requirements.txt to reflect the version of auto-gptq that works with your environment. Replace the existing line for auto-gptq with the correct version.
 
-Step 3: Reattempt Package Installation
-After installing the build tools, return to your virtual environment and attempt to install the package again:
+  Run the pip install -r requirements.txt command again to install the packages:
 
-```bash
-pip install git+https://github.com/PanQiWei/AutoGPTQ.git@main
-```
-or
-
-```bash
-pip install auto-gptq==0.7.1
-```
-
-Modify requirements.txt
-Update your requirements.txt to reflect the version of auto-gptq that works with your environment. Replace the existing line for auto-gptq with the correct 
-
-Run the pip install -r requirements.txt command again to install the packages:
 ## Contributing
 
 We welcome contributions! Please read our [CONTRIBUTING](CONTRIBUTING.md) guidelines before making any contributions.
