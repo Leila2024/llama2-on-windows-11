@@ -70,7 +70,7 @@ Cuda compilation tools, release 11.8, V11.8.89
 First, clone this repository to your local machine using Git.
 
 ```bash
-git clone https://github.com/Leila2024/lama2.git
+git clone https://github.com/Leila2024/llama2-on-windows-11.git
 cd lama2
 ```
 
