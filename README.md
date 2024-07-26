@@ -189,36 +189,36 @@ If you encounter any issues, refer to the following common problems and solution
 - **Conda Environment Activation Issue:** Ensure you are using the correct command for your shell (Command Prompt or PowerShell).
 - **Missing Dependencies:** Run `pip install -r requirements.txt` again to ensure all dependencies are installed.
 - **Model Not Found:** Verify that the model weights are placed in the correct directory.
-- **The error indicates that you need Microsoft Visual C++ 14.0 or greater to build the auto_gptq package. Here are the steps to resolve this issue:
-  
+- **Error with Microsoft Visual C++ 14.0 or greater required:** Follow these steps to resolve this issue:
+
   Step 1: Install Microsoft Visual C++ Build Tools
-  
+
   Go to the Microsoft Visual C++ Build Tools download page.
-  
+
   Download and install the build tools.
-  
+
   During the installation, ensure you select the "Desktop development with C++" workload.
-  
+
   Step 2: Verify Installation
-  
+
   After installing the build tools, you can verify the installation by running the following command in a new command prompt (not the one running your virtual environment):
-  
+
   ```bash
   cl
   ```
-  
+
   You should see the version information for the C++ compiler if it's installed correctly.
-  
+
   Step 3: Reattempt Package Installation
-  
+
   After installing the build tools, return to your virtual environment and attempt to install the package again:
-  
+
   ```bash
   pip install git+https://github.com/PanQiWei/AutoGPTQ.git@main
   ```
-  
+
   or
-  
+
   ```bash
   pip install auto-gptq==0.7.1
   ```
@@ -227,7 +227,39 @@ If you encounter any issues, refer to the following common problems and solution
   
   Update your requirements.txt to reflect the version of auto-gptq that works with your environment. Replace the existing line for auto-gptq with the correct version.
 
-  Run the pip install -r requirements.txt command again to install the packages:
+  Run the `pip install -r requirements.txt` command again to install the packages.
+
+- **Error with exllamav2 not found:** Follow these steps to resolve this issue:
+
+  Step 1: Check for Compatibility
+  Ensure that exllamav2 is compatible with your environment (OS and Python version). If not, you might need to find an alternative package or modify the project to work without it.
+
+  Step 2: Install exllamav2 Manually
+  If exllamav2 can be installed, try installing it manually:
+
+  ```bash
+  pip install exllamav2
+  ```
+
+  Step 3: Modify requirements.txt
+  If the manual installation is successful, update your requirements.txt file accordingly. Uncomment or add the line for exllamav2.
+
+  If the package still has not been installed or if it's not available for your platform, you may need to look into alternative solutions or modify the code that depends on exllamav2.
+
+  **Alternative Solution**
+  If exllamav2 is essential and cannot be installed, consider creating a new virtual environment or using a different system that matches the required environment specifications (e.g., a different Python version or OS).
+
+  **Steps Summary**
+  1. Check Compatibility: Ensure exllamav2 is compatible with your environment.
+  2. Manual Installation: Try manually installing exllamav2:
+
+  ```bash
+  pip install exllamav2
+  ```
+
+  3. Update requirements.txt
+
+: Modify to reflect the manual installation if successful.
 
 ## Contributing
 
