@@ -206,6 +206,11 @@ or
 ```bash
 pip install auto-gptq==0.7.1
 ```
+
+Modify requirements.txt
+Update your requirements.txt to reflect the version of auto-gptq that works with your environment. Replace the existing line for auto-gptq with the correct 
+
+Run the pip install -r requirements.txt command again to install the packages:
 ## Contributing
 
 We welcome contributions! Please read our [CONTRIBUTING](CONTRIBUTING.md) guidelines before making any contributions.
