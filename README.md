@@ -182,7 +182,30 @@ If you encounter any issues, refer to the following common problems and solution
 - **Conda Environment Activation Issue:** Ensure you are using the correct command for your shell (Command Prompt or PowerShell).
 - **Missing Dependencies:** Run `pip install -r requirements.txt` again to ensure all dependencies are installed.
 - **Model Not Found:** Verify that the model weights are placed in the correct directory.
+- **The error indicates that you need Microsoft Visual C++ 14.0 or greater to build the auto_gptq package. Here are the steps to resolve this issue:
+- Step 1: Install Microsoft Visual C++ Build Tools
+Go to the Microsoft Visual C++ Build Tools download page.
+Download and install the build tools.
+During the installation, ensure you select the "Desktop development with C++" workload.
+Step 2: Verify Installation
+After installing the build tools, you can verify the installation by running the following command in a new command prompt (not the one running your virtual environment):
 
+```bash
+cl
+```
+You should see the version information for the C++ compiler if it's installed correctly.
+
+Step 3: Reattempt Package Installation
+After installing the build tools, return to your virtual environment and attempt to install the package again:
+
+```bash
+pip install git+https://github.com/PanQiWei/AutoGPTQ.git@main
+```
+or
+
+```bash
+pip install auto-gptq==0.7.1
+```
 ## Contributing
 
 We welcome contributions! Please read our [CONTRIBUTING](CONTRIBUTING.md) guidelines before making any contributions.
